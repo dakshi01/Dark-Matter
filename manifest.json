@@ -1,0 +1,14 @@
+{
+  "name": "darkmatter",
+  "id": "1108641136742394687",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": [
+    "figma"
+  ],
+  "menu": [
+    {"name": "Dark Theme", "command": "dark"},
+    {"name": "Light Theme", "command": "light"},
+  {"separator": true}]
+
+}
