@@ -6,9 +6,9 @@
 // full browser environment (see documentation).
 
 // This shows the HTML page in "ui.html".
-/* figma.showUI(__html__, {themeColors:});
+//figma.showUI(__html__);
 
-// Calls to "parent.postMessage" from within the HTML page will trigger this
+/* // Calls to "parent.postMessage" from within the HTML page will trigger this
 // callback. The callback will be passed the "pluginMessage" property of the
 // posted message.
 figma.ui.onmessage = msg => {
@@ -26,18 +26,19 @@ figma.ui.onmessage = msg => {
     figma.currentPage.selection = nodes;
     figma.viewport.scrollAndZoomIntoView(nodes);
   } */
+  figma.root.setRelaunchData({dark: ''})
   if (figma.command === 'dark') {
     figma.currentPage.backgrounds = [
       {type: 'SOLID', color: {r:0.117, g: 0.117, b: 0.117}}
     ]
   }
-    
+  
+  //figma.root.setRelaunchData({light: ''})
   if (figma.command === 'light') {
     figma.currentPage.backgrounds = [
-      {type: 'SOLID', color: {r:0.878, g:0.878, b:0.878}}
+      {type: 'SOLID', color: {r:0.898, g:0.898, b:0.898}}
     ]
   }
-  
     
   // Make sure to close the plugin when you're done. Otherwise the plugin will
   // keep running, which shows the cancel button at the bottom of the screen.
