@@ -26,14 +26,17 @@ figma.ui.onmessage = msg => {
     figma.currentPage.selection = nodes;
     figma.viewport.scrollAndZoomIntoView(nodes);
   } */
-  figma.root.setRelaunchData({dark: ''})
+  
+  figma.root.setRelaunchData({dark: '', light: ''})
+  
+
   if (figma.command === 'dark') {
     figma.currentPage.backgrounds = [
       {type: 'SOLID', color: {r:0.117, g: 0.117, b: 0.117}}
     ]
   }
   
-  //figma.root.setRelaunchData({light: ''})
+  
   if (figma.command === 'light') {
     figma.currentPage.backgrounds = [
       {type: 'SOLID', color: {r:0.898, g:0.898, b:0.898}}
