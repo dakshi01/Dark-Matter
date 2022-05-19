@@ -8,8 +8,7 @@
   ],
   
   "relaunchButtons": [
-    {"command": "dark", "name": "Dark Canvas"},
-    {"command": "light", "name": "Light Canvas", "multipleSelection": true}
+    {"command": "toggle", "name": "Switch Canvas Theme"}
   ]
 
 }

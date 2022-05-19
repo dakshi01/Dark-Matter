@@ -27,8 +27,7 @@ figma.ui.onmessage = msg => {
     figma.viewport.scrollAndZoomIntoView(nodes);
   } */
   
-  figma.root.setRelaunchData({dark: '', light: ''})
-  
+  /* figma.root.setRelaunchData({dark: '', light: ''})
 
   if (figma.command === 'dark') {
     figma.currentPage.backgrounds = [
@@ -41,10 +40,30 @@ figma.ui.onmessage = msg => {
     figma.currentPage.backgrounds = [
       {type: 'SOLID', color: {r:0.898, g:0.898, b:0.898}}
     ]
-  }
+  } */
+
+figma.root.setRelaunchData({ toggle: '' });
+
+const currentTheme = figma.currentPage.getPluginData('currentTheme') || "light"
+let nextTheme = "dark"
+
+if (currentTheme === 'dark') {
+    nextTheme = 'light'
+    figma.currentPage.backgrounds = [
+        { type: 'SOLID', color: { r: 0.117, g: 0.117, b: 0.117 } }
+    ];
+}
+if (currentTheme === 'light') {
+    nextTheme = 'dark'
+    figma.currentPage.backgrounds = [
+        { type: 'SOLID', color: { r: 0.898, g: 0.898, b: 0.898 } }
+    ];
+}
+
+figma.currentPage.setPluginData('currentTheme', nextTheme)
     
-  // Make sure to close the plugin when you're done. Otherwise the plugin will
-  // keep running, which shows the cancel button at the bottom of the screen.
-  figma.closePlugin();
+// Make sure to close the plugin when you're done. Otherwise the plugin will
+// keep running, which shows the cancel button at the bottom of the screen.
+figma.closePlugin();
 
 
